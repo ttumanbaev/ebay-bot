@@ -11,6 +11,12 @@ CHAT_ID = "886731596"
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
+# Убираем webhook, если он активен
+bot.remove_webhook()
+
+# Запускаем обычный polling
+bot.polling(none_stop=True)
+
 # === Файл для сохранения ===
 TRACK_FILE = "tracked.json"
 
